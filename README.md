@@ -21,3 +21,19 @@ output - all output stats files will be saved in "output" subfolder.
 1. Open terminal 
 2. `cd /Users/wenfengwang/Wen_Work\ Dropbox/Wen-Feng\ Wang/Wenfeng_Data/BG_XML/Code/job_parser`
 3. `python3 parser.py`
+
+# Usage
+1. with a JobText like below 
+```
+<JobText>working-from-home, working_from_home, working from home, Physician, Engineer From: Company: </JobText> 
+```
+2. Assume your keywods list is
+words = ["Physician", "Engineer", "working-from-home", "working_from_home"]
+multi_words = ["working from home"]
+
+
+3. We expect the output would be
+```
+bgtjobid,jobdate,physician,engineer,working-from-home,working_from_home,working from home
+311017520,2010-01-01,1,1,1,1,1
+```  
