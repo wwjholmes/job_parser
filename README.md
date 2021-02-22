@@ -27,8 +27,8 @@ output - all output stats files will be saved in "output" subfolder.
 ```
 <JobText>working-from-home, working_from_home, working from home, Physician, Engineer From: Company: </JobText> 
 ```
-2. Assume your keywods list is
-words = ["Physician", "Engineer", "working-from-home", "working_from_home"]
+2. Assume your keywords list is (no special characters in keywords list)
+words = ["Physician", "Engineer"]
 multi_words = ["working from home"]
 
 
