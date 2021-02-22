@@ -52,7 +52,6 @@ def count_stats(filepath, filename):
         job_text = re.sub('[^a-zA-Z0-9]', ' ', job_text)
         # 3. replace multiple spaces with single space 
         job_text = ' '.join(job_text.split())
-        print(job_text)
 
         job['bgtjobid'] = job_node.findtext('JobID') 
         job['jobdate'] = job_node.findtext('JobDate')
