@@ -7,8 +7,8 @@ import os
 import re
 
 ## Note: you can add your keywords here 
-words = ["Physician", "Engineer", "working-from-home", "working_from_home"]
-multi_words = ["working from home"]
+words = ["Physician", "Engineer"]
+multi_words = ["work from home"]
 
 ## convert all words into lowercase
 words = list(map(lambda x: x.lower(), words))
@@ -45,11 +45,19 @@ def count_stats(filepath, filename):
 
     for job_node in data:
         job = {}
+
+        # 1. cast all text to lower case
         job_text = job_node.findtext('JobText').lower()
+        # 2. replace all non words characters to space
+        job_text = re.sub('[^a-zA-Z0-9]', ' ', job_text)
+        # 3. replace multiple spaces with single space 
+        job_text = ' '.join(job_text.split())
+        print(job_text)
+
         job['bgtjobid'] = job_node.findtext('JobID') 
         job['jobdate'] = job_node.findtext('JobDate')
 
-        tokens = re.findall(r"[\w_-]+", job_text)
+        tokens = re.findall(r"[\w]+", job_text)
         token_map = dict.fromkeys(tokens, True)
 
         for word in words:

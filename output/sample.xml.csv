@@ -1,2 +1,7 @@
-bgtjobid,jobdate,physician,engineer,working-from-home,working_from_home,working from home
-311017520,2010-01-01,1,1,1,1,1
+bgtjobid,jobdate,physician,engineer,work from home
+311017520,2010-01-01,1,0,0
+311017520,2010-01-01,1,0,1
+311017520,2010-01-01,1,0,1
+311017520,2010-01-01,1,0,1
+311017520,2010-01-01,1,0,1
+311017520,2010-01-01,0,1,0
