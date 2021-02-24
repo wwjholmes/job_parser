@@ -22,6 +22,9 @@ output - all output stats files will be saved in "output" subfolder.
 2. `cd /Users/wenfengwang/Wen_Work\ Dropbox/Wen-Feng\ Wang/Wenfeng_Data/BG_XML/Code/job_parser`
 3. `python3 parser.py`
 
+
+4. similary, you can run `python3 count.py` to get a stats of words list against xml files. Notice that there is no pre-processing. We do a simple exact match for counting
+
 # Usage
 1. with a JobText like below 
 ```
