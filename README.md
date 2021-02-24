@@ -24,6 +24,16 @@ output - all output stats files will be saved in "output" subfolder.
 
 
 4. similary, you can run `python3 count.py` to get a stats of words list against xml files. Notice that there is no pre-processing. We do a simple exact match for counting
+```
+Start processing file  data/US_XML_AddFeed_20200101_20200107.xml
+...
+work-from-home : 210
+work_from_home : 0
+work from home: : 614
+work from home: yes : 88
+work from home: no : 289
+Finished processing  718961  in total for  data/US_XML_AddFeed_20200101_20200107.xml
+```
 
 # Usage
 1. with a JobText like below 
