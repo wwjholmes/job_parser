@@ -100,6 +100,6 @@ def count_stats(filepath, filename):
 d = "data"
 for path in os.listdir(d):
     full_path = os.path.join(d, path)
-    if os.path.isfile(full_path) and fnmatch.fnmatch(full_path, '*sample.xml'):
+    if os.path.isfile(full_path) and fnmatch.fnmatch(full_path, '*.xml'):
         count_stats(full_path, path)
 
