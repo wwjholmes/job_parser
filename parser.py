@@ -5,6 +5,7 @@ import csv
 import fnmatch
 import os
 import re
+import time
 
 ## Note: you can add your keywords here 
 words = ["Physician", "Engineer"]
@@ -35,8 +36,8 @@ def parse_and_remove(filename, path):
                 elem_stack.pop()
             except IndexError:
                 pass
-
 def count_stats(filepath, filename):
+    start = time.time()
     print('\nStart processing file ', filepath) 
     data = parse_and_remove(filepath, 'Job')
 
@@ -72,7 +73,10 @@ def count_stats(filepath, filename):
         count += 1
         results.append(job)
 
+    end = time.time()
+    duration = end - start
     print('Finished processing ', count, ' in total for ', filepath) 
+    print('Total time:', duration)
 
     ## write to stats.csv
     output_filepath = 'output/' + filename + '.csv' 
