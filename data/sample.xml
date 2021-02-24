@@ -1,33 +1,43 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <Jobs>
     <Job>
-        <JobID>311017520</JobID>
+        <JobID>1</JobID>
         <JobDate>2010-01-01</JobDate>
-        <JobText>Physician</JobText>
+        <JobText>Nothing match here</JobText>
     </Job>
     <Job>
-        <JobID>311017520</JobID>
+        <JobID>2</JobID>
+        <JobDate>2010-01-01</JobDate>
+        <JobText>Physician, Engineer, Work From Home</JobText>
+    </Job>
+    <Job>
+        <JobID>3</JobID>
         <JobDate>2010-01-01</JobDate>
         <JobText>Physician, Work From Home</JobText>
     </Job>
     <Job>
-        <JobID>311017520</JobID>
+        <JobID>4</JobID>
         <JobDate>2010-01-01</JobDate>
         <JobText>Physician, Work-from-home</JobText>
     </Job>
     <Job>
-        <JobID>311017520</JobID>
+        <JobID>5</JobID>
         <JobDate>2010-01-01</JobDate>
-        <JobText>Physician, work______from      home</JobText>
+        <JobText>Physician, work from home: yes</JobText>
     </Job>
     <Job>
-        <JobID>311017520</JobID>
+        <JobID>6</JobID>
         <JobDate>2010-01-01</JobDate>
-        <JobText>Physician, work_from home</JobText>
+        <JobText>Physician, work from home: no</JobText>
     </Job>
     <Job>
-        <JobID>311017520</JobID>
+        <JobID>7</JobID>
         <JobDate>2010-01-01</JobDate>
         <JobText>Engineer</JobText>
+    </Job>
+    <Job>
+        <JobID>8</JobID>
+        <JobDate>2010-01-01</JobDate>
+        <JobText></JobText>
     </Job>
 </Jobs>

@@ -46,6 +46,7 @@ def count_stats(filepath, filename):
 
     for job_node in data:
         job = {}
+        count += 1
 
         # 1. cast all text to lower case
         job_text = job_node.findtext('JobText').lower()
@@ -60,26 +61,34 @@ def count_stats(filepath, filename):
         tokens = re.findall(r"[\w]+", job_text)
         token_map = dict.fromkeys(tokens, True)
 
+        match_any = False
         for word in words:
-            job[word] = 1 if word in token_map else 0
+            if word in token_map:
+                job[word] = 1 
+                match_any = True 
+            else:
+                job[word] = 0 
 
         for word in multi_words:
-            job[word] = 1 if word in job_text else 0
+            if word in job_text:
+                job[word] = 1 
+                match_any = True 
+            else:
+                job[word] = 0 
 
+        #if count % 10000 == 0:
+        #    print('processed ', count, ' jobs...') 
 
-        if count % 10000 == 0:
-            print('processed ', count, ' jobs...') 
-
-        count += 1
-        results.append(job)
+        if match_any: 
+            results.append(job)
 
     end = time.time()
     duration = end - start
     print('Finished processing ', count, ' in total for ', filepath) 
     print('Total time:', duration)
 
-    ## write to stats.csv
-    output_filepath = 'output/' + filename + '.csv' 
+    ## write to stats.dta
+    output_filepath = 'output/' + filename + '.dta' 
     with open(output_filepath, 'w', newline='') as csvfile:
         fieldnames = ['bgtjobid', 'jobdate'] + words + multi_words
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
@@ -91,6 +100,6 @@ def count_stats(filepath, filename):
 d = "data"
 for path in os.listdir(d):
     full_path = os.path.join(d, path)
-    if os.path.isfile(full_path) and fnmatch.fnmatch(full_path, '*.xml'):
+    if os.path.isfile(full_path) and fnmatch.fnmatch(full_path, '*sample.xml'):
         count_stats(full_path, path)
 
