@@ -90,11 +90,12 @@ def count_stats(filepath, filename):
     ## write to stats.dta
     output_filepath = 'output/' + filename + '.dta' 
     with open(output_filepath, 'w', newline='') as csvfile:
-        fieldnames = ['bgtjobid', 'jobdate'] + words + multi_words
+        fieldnames = ['bgtjobid', 'jobdate'] + words + multi_words + ['tot_job']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
         writer.writeheader()
         for job in results:
+            job['tot_job'] = count
             writer.writerow(job)
 
 d = "data"
